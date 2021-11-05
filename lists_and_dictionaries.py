@@ -74,3 +74,36 @@ print(NBA_players)
 del NBA_players["Michael Jordan"]
 
 print(NBA_players)
+
+def total_price(food_items, food_items2):
+    total=dict_food[food_items]+dict_food[food_items2]
+    return total
+
+def price_diff(food_items, food_items2):
+    diff=dict_food[food_items]-dict_food[food_items2]
+    return abs(diff)
+
+def shoe_restock(shoe, num):
+    shoe_price[shoe] *=num
+    return shoe_price 
+
+def clearance_sale(shoe, num):
+    shoe_price[shoe] /=num
+    return shoe_price 
+
+def supply_search(dict):
+    largest=0
+    supply=''
+
+    for key in dict.keys():
+        if dict[key] > largest:
+            largest=dict[key]
+            supply=key
+
+    return (supply, largest)
+
+print(total_price("beef", "Chicken"))
+print(price_diff("beef", "Chicken"))
+print(shoe_restock("Yeezy", 3))
+print(clearance_sale("SB Dunk", 5))
+print(supply_search(NBA_players))

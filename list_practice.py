@@ -41,3 +41,31 @@ world_city.pop(-3)
 world_city.remove("Los Angeles")
 
 print(world_city)
+
+def print_city(list):
+    for el in list:
+        print(el)
+    return "All the cities are there in the list"
+
+def reorganize_list(list):
+    # [1, 2, 3, 4, 5]
+    print(list)
+    counter=0
+
+    while counter < len(list):
+        item1= list[counter]
+        item2= list[counter +1]
+
+        if len(item1) >= len(item2):
+            counter += 1
+            continue
+        elif counter +1 == len(list) -1:
+            break
+        else:
+            list.remove(item1)
+            list.append(item1)
+            counter += 1
+    return list
+
+print(print_city(world_city))
+print(reorganize_list(world_city))
